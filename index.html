@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecurePass - Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fas fa-shield-alt"></i> SecurePass
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#generator">Generator</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h1>Generate Strong, Secure Passwords</h1>
+      <p>Protect your online accounts with randomly generated passwords that are virtually impossible to crack.</p>
+      <a href="#generator" class="cta-button">Create Password <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="hero-image">
+      <i class="fas fa-lock fa-6x"></i>
+    </div>
+  </section>
+
+  <section id="generator" class="generator-section">
+    <div class="container">
+      <h2>Random Password Generator</h2>
+
+      <div class="password-box">
+        <input type="text" id="password" readonly>
+        <button id="copy-btn" title="Copy to clipboard"><i class="fas fa-copy"></i></button>
+        <button id="generate-btn" onclick="generatePassword()">Generate</button>
+      </div>
+      
+      <div class="strength-meter">
+        <div class="strength-bar" id="strength-bar"></div>
+        <span id="strength-text">Password Strength</span>
+      </div>
+
+      <div class="slider-container">
+        <label for="length">Password Length:</label>
+        <input type="range" id="length" min="6" max="24" value="12" oninput="updateLength(this.value)">
+        <span id="length-display">12</span>
+      </div>
+
+      <div class="options">
+        <p><strong>Choose character types:</strong></p>
+        <div class="option-item checkbox-item">
+          <label><input type="checkbox" id="uppercase" checked> Uppercase Letters (A-Z)</label>
+          <span class="sample">ABCDEFGH...</span>
+        </div>
+        <div class="option-item checkbox-item">
+          <label><input type="checkbox" id="lowercase" checked> Lowercase Letters (a-z)</label>
+          <span class="sample">abcdefgh...</span>
+        </div>
+        <div class="option-item checkbox-item">
+          <label><input type="checkbox" id="numbers" checked> Numbers (0-9)</label>
+          <span class="sample">0123456789</span>
+        </div>
+        <div class="option-item checkbox-item">
+          <label><input type="checkbox" id="special"> Special Characters (!@#$...)</label>
+          <span class="sample">!@#$%^&*()_-+=</span>
+        </div>
+      </div>
+      
+      <div class="tips">
+        <p>Tips: A strong password has a mix of characters and is at least 12 characters long.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About SecurePass</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Why Password Security Matters</h3>
+          <p>In today's digital world, strong passwords are your first line of defense against unauthorized access to your accounts. Weak passwords can be cracked in seconds, putting your personal information at risk.</p>
+          
+          <h3>How Our Generator Works</h3>
+          <p>SecurePass uses advanced cryptographic algorithms to generate truly random passwords that meet the highest security standards. You can customize your password length and character types to suit different websites' requirements.</p>
+          
+          <h3>Best Practices for Password Security</h3>
+          <ul>
+            <li>Use a different password for each account</li>
+            <li>Choose passwords with at least 12 characters</li>
+            <li>Include a mix of uppercase, lowercase, numbers, and symbols</li>
+            <li>Consider using a password manager to store your passwords securely</li>
+            <li>Change critical passwords regularly</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <i class="fas fa-user-shield fa-8x"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have questions or suggestions? We'd love to hear from you!</p>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Your email">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Your message"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-shield-alt"></i> SecurePass
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#generator">Generator</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 SecurePass. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
